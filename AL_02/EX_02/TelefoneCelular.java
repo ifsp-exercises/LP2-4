@@ -24,4 +24,8 @@ public class TelefoneCelular extends Telefone {
   public void disca(String numero) {
     System.out.println("O número:" + numero + " é um celular.");
   }
+
+  public void explodir() {
+    System.out.println("KABUM!");
+  }
 }

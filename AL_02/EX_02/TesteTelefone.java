@@ -6,6 +6,7 @@ public class TesteTelefone {
     TelefoneCelular celular = new TelefoneCelular();
     TelefoneFixo fixo = new TelefoneFixo();
     TelefonePublico publico = new TelefonePublico();
+
     Telefone telefone = null;
 
     int n = (int) (Math.random() * 3.0);
