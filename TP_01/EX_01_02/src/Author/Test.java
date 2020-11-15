@@ -1,6 +1,6 @@
-import Author.*;
+package Author;
 
-public class AuthorTest {
+public class Test {
   private static final String authorJsonString = "{\n  \"name\": \"%s\",\n  \"email\": \"%s\",\n  \"gender\": \"%c\"\n}";
 
   private static void printOk() {
