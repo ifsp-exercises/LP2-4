@@ -2,9 +2,9 @@
 
 ## Vosso sumário
 
-<a href="#exercicio-01">Exercício 01</a>
-<a href="#exercicio-02">Exercício 02</a>
-<a href="#exercicio-03">Exercício 03</a>
+- <a href="#exercício-01">Exercício 01</a>
+- <a href="#exercício-02">Exercício 02</a>
+- <a href="#exercício-03">Exercício 03</a>
 
 ## Exercício 01
 
