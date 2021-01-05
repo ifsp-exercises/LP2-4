@@ -5,9 +5,9 @@ import javax.swing.JPanel;
 import javax.swing.JOptionPane;
 
 public class V1 extends Frame implements ActionListener {
-  Pessoa pessoas = new Pessoa();
+  Pessoa umaPessoa = new Pessoa();
 
-  JFrame f = new JFrame("TP3 - CADASTRO V1");
+  JFrame f = new JFrame("CADASTRO V1");
   JPanel p1 = new JPanel(null);
   JPanel p2 = new JPanel(null);
   JPanel p3 = new JPanel(null);
@@ -64,7 +64,6 @@ public class V1 extends Frame implements ActionListener {
     p5.add(btnMostrar);
     p5.add(btnSair);
 
-    // #region Frame
     f.add(p1);
     f.add(p2);
     f.add(p3);
@@ -102,10 +101,10 @@ public class V1 extends Frame implements ActionListener {
           isTrue = false;
         }
         if (isTrue) {
-          pessoas.setNome(name);
-          pessoas.setIdade(Integer.parseInt(idade));
-          pessoas.setSexo(sexo);
-          pessoas.setKp();
+          umaPessoa.setNome(name);
+          umaPessoa.setIdade(Integer.parseInt(idade));
+          umaPessoa.setSexo(sexo);
+          umaPessoa.setKp();
           JOptionPane.showMessageDialog(null, "Salvo");
         }
         txtFieldIdade.setText("");
@@ -128,10 +127,10 @@ public class V1 extends Frame implements ActionListener {
     }
 
     if (e.getSource() == btnMostrar) {
-      txtFieldIdade.setText("" + pessoas.getIdade());
-      txtFieldNome.setText(pessoas.getNome());
-      txtFieldSexo.setText("" + pessoas.getSexo());
-      txtFieldNumero.setText("" + pessoas.getKp());
+      txtFieldIdade.setText("" + umaPessoa.getIdade());
+      txtFieldNome.setText(umaPessoa.getNome());
+      txtFieldSexo.setText("" + umaPessoa.getSexo());
+      txtFieldNumero.setText("" + umaPessoa.getKp());
     }
 
     if (e.getSource() == btnSair) {

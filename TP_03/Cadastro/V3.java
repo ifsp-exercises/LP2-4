@@ -1,14 +1,13 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.JRadioButton;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JOptionPane;
 
 public class V3 extends Frame implements ActionListener {
-  Pessoa pessoas = new Pessoa();
-  JFrame f = new JFrame("TP3 - V1");
+  Pessoa umaPessoa = new Pessoa();
+  JFrame f = new JFrame("CADASTRO V3");
   JPanel p1 = new JPanel(null);
   JPanel p2 = new JPanel(null);
   JPanel p3 = new JPanel(null);
@@ -115,10 +114,10 @@ public class V3 extends Frame implements ActionListener {
           isTrue = false;
         }
         if (isTrue) {
-          pessoas.setNome(name);
-          pessoas.setIdade(Integer.parseInt(idade));
-          pessoas.setSexo(sexo);
-          pessoas.setKp();
+          umaPessoa.setNome(name);
+          umaPessoa.setIdade(Integer.parseInt(idade));
+          umaPessoa.setSexo(sexo);
+          umaPessoa.setKp();
           JOptionPane.showMessageDialog(null, "Salvo");
         }
         txtFieldIdade.setText("");
@@ -139,9 +138,9 @@ public class V3 extends Frame implements ActionListener {
     }
 
     if (e.getSource() == btnMostrar) {
-      txtFieldIdade.setText("" + pessoas.getIdade());
-      txtFieldNome.setText(pessoas.getNome());
-      txtFieldNumero.setText("" + pessoas.getKp());
+      txtFieldIdade.setText("" + umaPessoa.getIdade());
+      txtFieldNome.setText(umaPessoa.getNome());
+      txtFieldNumero.setText("" + umaPessoa.getKp());
     }
 
     if (e.getSource() == btnSair) {
