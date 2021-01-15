@@ -1,5 +1,7 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,22 +30,22 @@ public class StudentRepository implements IStudentRepository {
     try {
       String query = "";
       query += "insert into students (name, age, weight, height, objective)";
-      query += "values (";
+      query += " values (?, ?, ?, ?, ?)";
 
-      query += student.name + ",";
-      query += student.age + ",";
-      query += student.weight + ",";
-      query += student.height + ",";
-      query += student.objective;
+      PreparedStatement statement = _connection.prepareStatement(query);
 
-      query += ")";
+      statement.setString(1, student.name);
+      statement.setInt(2, student.age);
+      statement.setFloat(3, student.weight);
+      statement.setFloat(4, student.height);
+      statement.setString(5, student.objective);
 
-      _connection.createStatement().executeQuery(query);
-    } catch (Exception e) {
-      return false;
+      statement.execute();
 
-    } finally {
       return true;
+    } catch (Exception exception) {
+      System.out.println(exception);
+      return false;
     }
   }
 

@@ -146,32 +146,27 @@ public class Form extends Frame implements ActionListener {
         break;
 
       case "Adicionar":
-        if (nameField.getText().isEmpty() 
-          || ageField.getText().isEmpty() 
-          || weightField.getText().isEmpty()
-          || heightField.getText().isEmpty() 
-          || objectiveField.getText().isEmpty())
+        var invalidEntry = nameField.getText().isEmpty() || ageField.getText().isEmpty()
+            || weightField.getText().isEmpty() || heightField.getText().isEmpty() || objectiveField.getText().isEmpty();
+
+        if (invalidEntry) {
           JOptionPane.showMessageDialog(null, "Preencha todos os campos.");
-        
-        String name = nameField.getText(); 
-        int age = Integer.parseInt(nameField.getText());
+          break;
+        }
+
+        String name = nameField.getText();
+        int age = Integer.parseInt(ageField.getText());
         float weight = Float.parseFloat(weightField.getText());
         float height = Float.parseFloat(heightField.getText());
-        String objective = objectiveField.getText(); 
+        String objective = objectiveField.getText();
 
-        var student = new Student(
-          name,
-          age,
-          weight,
-          height,
-          objective
-        );
+        var student = new Student(name, age, weight, height, objective);
 
         var created = _studentRepository.create(student);
-      
-        if (created) 
+
+        if (created)
           JOptionPane.showMessageDialog(null, "Criado com sucesso.");
-         else 
+        else
           JOptionPane.showMessageDialog(null, "Falha ao criar.");
 
         clearFields();
